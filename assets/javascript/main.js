@@ -21,9 +21,7 @@ var frequency = 0;
 $("#submitbtn").on("click", function(event) {
     event.preventDefault();
 
-    // YOUR TASK!!!
-    // Code in the logic for storing and retrieving the most recent user.
-    // Don't forget to provide initial data to your Firebase database.
+    // storing and retrieving the most recent user.
     name = $("#tname").val().trim();
     destination = $("#destination").val().trim();
     time = $("#ftime").val().trim();
@@ -40,10 +38,9 @@ $("#submitbtn").on("click", function(event) {
     });
 });
 
-// Firebase watcher + initial loader HINT: This code behaves similarly to .on("value")
+// Firebase watcher + initial loader
 dataRef.ref().on("child_added", function(childSnapshot) {
 
-    // Log everything that's coming out of snapshot
     console.log(childSnapshot.val().name);
     console.log(childSnapshot.val().name);
     console.log(childSnapshot.val().destination);
